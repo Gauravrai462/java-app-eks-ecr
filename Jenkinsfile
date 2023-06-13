@@ -1,10 +1,11 @@
 pipeline {
 
  agent any
-   stages {
+ 
+   stages{
 
      stage('checkout'){
-       step {
+       steps{
          git branch: 'main', url: 'https://github.com/Gauravrai462/java-app-eks-ecr.git'
        } 
 
