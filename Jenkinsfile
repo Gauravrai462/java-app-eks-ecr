@@ -1,3 +1,4 @@
+@Library('my-shared-library') _
 pipeline {
 
  agent any
@@ -7,7 +8,7 @@ pipeline {
      stage('checkout'){
        steps{
         gitCheckout(
-        branch: "main"
+        branch: "main",
         url: "https://github.com/Gauravrai462/java-app-eks-ecr.git" 
         )
          
