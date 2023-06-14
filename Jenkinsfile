@@ -19,7 +19,7 @@ pipeline {
       
         steps{
           script{
-          sh 'mvntest()'
+              mvntest()
           }
      }
     }
