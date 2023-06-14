@@ -15,5 +15,12 @@ pipeline {
             )
             }
         }
+    stage{
+      
+      steps{
+        sh 'mvntest()'
+      
+     }
+    }
   }
 }
