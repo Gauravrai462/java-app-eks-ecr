@@ -18,8 +18,9 @@ pipeline {
       stage('mvn test'){
       
         steps{
+          script{
           sh 'mvntest()'
-      
+          }
      }
     }
   }
