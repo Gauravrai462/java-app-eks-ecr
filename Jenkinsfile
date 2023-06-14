@@ -15,10 +15,10 @@ pipeline {
             )
             }
         }
-    stage{
+      stage(mvn test){
       
-      steps{
-        sh 'mvntest()'
+        steps{
+          sh 'mvntest()'
       
      }
     }
