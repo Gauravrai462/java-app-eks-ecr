@@ -24,5 +24,13 @@ pipeline {
                }
             }
         }
+     stage('mvn initigration test'){
+
+           steps{
+
+             mvnIntigration()
+           }
+      
+     }
   }
 }
