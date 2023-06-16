@@ -32,5 +32,11 @@ pipeline {
            }
       
      }
+    stage('Sonar'){
+     steps{
+       sonar()
+     }
+    }
+    
   }
 }
