@@ -5,7 +5,12 @@ pipeline {
  agent any
  
    stages{
-         
+    
+         stage(clean){
+        steps{
+         cleanWs()
+        }
+      }
         stage('Git Checkout'){
                  
             steps{
@@ -15,12 +20,7 @@ pipeline {
             )
             }
         }
-    
-      stage(clean){
-        steps{
-         cleanWs()
-        }
-      }
+   
     
       stage('Unit Test maven'){
 
