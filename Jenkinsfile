@@ -15,6 +15,13 @@ pipeline {
             )
             }
         }
+    
+      stage(clean){
+        steps{
+         cleanWs()
+        }
+      }
+    
       stage('Unit Test maven'){
 
             steps{
@@ -24,6 +31,7 @@ pipeline {
                }
             }
         }
+    
      stage('mvn initigration test'){
 
            steps{
@@ -32,6 +40,7 @@ pipeline {
            }
       
      }
+    
     stage('Sonar'){
      steps{
        sonar()
