@@ -63,5 +63,12 @@ pipeline {
       qualitygate()
      }
     }
+
+   stage('Build'){
+
+     steps{
+      mavenBuild()
+     }
+    }
   }
 }
