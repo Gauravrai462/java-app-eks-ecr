@@ -43,7 +43,7 @@ pipeline {
     
     stage('Sonar'){
      steps{
-       sonar()
+       sonar(SonarQubecredentialsId)
      }
     }
 
