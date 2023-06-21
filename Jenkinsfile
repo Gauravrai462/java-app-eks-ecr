@@ -46,7 +46,7 @@ pipeline {
         SONAR_URL = "http://172.17.0.1:9000"
       }
       steps {
-        withSonarQubeEnv(installationName: 'SonarQube' ,credentialsId: 'sonar') {
+        withSonarQubeEnv(installationName: 'Sonar', credentialsId: 'sonar') {
          sh 'mvn clean package sonar:sonar'
         //withSonarQubeEnv(credentialsId: 'sonar') {
          //sh 'mvn clean package sonar:sonar'
