@@ -43,7 +43,9 @@ pipeline {
     
     stage('Sonar'){
      steps{
-       sonar(SonarQubecredentialsId)
+      script{
+       sonar()
+      }
      }
     }
 
