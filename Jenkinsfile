@@ -41,13 +41,17 @@ pipeline {
       
      }
     
-    stage('Sonar'){
-     steps{
-      script{
-       sonar()
+    stage('Static Code Analysis') {
+      environment {
+        SONAR_URL = "http://172.17.0.1:9000"
       }
-     }
+      steps {
+        withCredentials([string(credentialsId: 'sonar', variable: 'SONAR_AUTH_TOKEN')]) {
+           mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+        }
+      }
     }
+   
 
     stage('quality Gate'){
 
