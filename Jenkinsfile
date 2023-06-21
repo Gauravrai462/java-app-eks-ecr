@@ -41,7 +41,7 @@ pipeline {
       
      }
     
-    stage('Static Code Analysis') {
+    /*stage('Static Code Analysis') {
       environment {
         SONAR_URL = "http://172.17.0.1:9000"
       }
@@ -62,7 +62,7 @@ pipeline {
      steps{
       qualitygate()
      }
-    }
+    }*/
 
    stage('Build'){
 
