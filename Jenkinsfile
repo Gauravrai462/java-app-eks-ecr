@@ -47,9 +47,11 @@ pipeline {
       }
       steps {
         withSonarQubeEnv(credentialsId: 'sonar') {
+         sh 'mvn clean package sonar:sonar'
+        //withSonarQubeEnv(credentialsId: 'sonar') {
          //sh 'mvn clean package sonar:sonar'
-        //withCredentials([string(credentialsId: 'sonar', variable: 'SONAR_AUTH_TOKEN')]) {
-        sh 'mvn clean package sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+        //withCredentials([string(credentialsId: 'sonar', variable: 'SONAR_AUTH_TOKEN')]) 
+        //sh 'mvn clean package sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
         }
       }
     }
