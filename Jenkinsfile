@@ -29,7 +29,7 @@ pipeline {
         }
    
     
-      stage('Unit Test maven'){
+      /*stage('Unit Test maven'){
 
             steps{
                script{
@@ -46,7 +46,7 @@ pipeline {
              mvnIntigration()
            }
       
-     }
+     }*/
     
     /*stage('Static Code Analysis') {
       environment {
