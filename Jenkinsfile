@@ -6,9 +6,9 @@ pipeline {
 
  parameters{
 
-    string{name:'ImageName', description:"Docker Image name", defaultValue:'javaapp'}
-    string{name:'ImageTag', description:"Docker tag name", defaultValue:'v1'}
-    string{name:'DockeerHubUser', description:"Docker Image name", defaultValue:'raigaurav95'}
+    string{name: 'ImageName', description: "Docker Image name", defaultValue: 'javaapp'}
+    string{name: 'ImageTag', description: "Docker tag name", defaultValue: 'v1'}
+    string{name: 'DockerHubUser', description: "Docker Image name", defaultValue: 'raigaurav95'}
  }
  
    stages{
