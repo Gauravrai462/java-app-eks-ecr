@@ -3,6 +3,13 @@
 pipeline {
 
  agent any
+
+ parameters{
+
+    string{Name:"ImageName", Description:"Docker Image name", DefaultValue:"javaapp"}
+    string{Name:"ImageTag", Description:"Docker tag name", DefaultValue:"v1"}
+    string{Name:"DockeerHubUser", Description:"Docker Image name", DefaultValue:"raigaurav95"}
+ }
  
    stages{
     
@@ -70,5 +77,13 @@ pipeline {
       mavenBuild()
      }
     }
+
+   stage('Docker Build'){
+
+     steps{
+      DockerBuild("${params.ImageName}", "${params.ImageTag}", "${params.DockeerHubUser}")
+     }
+    }
+    
   }
 }
