@@ -81,8 +81,10 @@ pipeline {
    stage('Docker Build'){
 
      steps{
-      DockerBuild("${params.ImageName}", "${params.ImageTag}", "${params.DockeerHubUser}")
-     }
+        script{
+            DockerBuild("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
+        }
+      } 
     }
     
   }
