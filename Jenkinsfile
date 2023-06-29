@@ -86,6 +86,16 @@ pipeline {
         }
       } 
     }
+
+
+  stage('Docker Push'){
+
+     steps{
+        script{
+            dockerPush("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
+        }
+      } 
+    } 
     
   }
 }
