@@ -91,6 +91,7 @@ pipeline {
 
      steps{
         script{
+         
             dockerScan("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
         }
       } 
