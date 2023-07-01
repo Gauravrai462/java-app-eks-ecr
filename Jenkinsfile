@@ -88,16 +88,13 @@ pipeline {
     }
 
   stage('Docker Scan'){
+
      steps{
         script{
-         
-         sh """   
-           trivy image raigaurav95/javaapp:latest > scan.txt
-           cat scan.txt
-           """
+            dockerImageScan("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
         }
       } 
-   }   
+    } 
 
 
   stage('Docker Push'){
