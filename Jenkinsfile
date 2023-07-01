@@ -108,6 +108,15 @@ pipeline {
         }
       } 
     } 
+
+  stage('Docker Clean'){
+
+     steps{
+        script{
+            dockerClean("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
+        }
+      } 
+    }   
     
  
   }
