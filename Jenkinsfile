@@ -109,17 +109,14 @@ pipeline {
       } 
     } 
 
-  stage('Docker Clean'){
+  stage('Docker Push'){
 
      steps{
         script{
-            sh """
-              docker rmi ${hubUser}/${project}:${ImageTag}
-              docker rmi ${hubUser}/${project} ${hubUser}/${project}:latest
-             """
+            dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
         }
       } 
-    }   
+    } 
     
  
   }
