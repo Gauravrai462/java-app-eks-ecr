@@ -92,7 +92,7 @@ pipeline {
         script{
          
          sh """   
-           trivy image ${hubUser}/${project}:latest > scan.txt
+           trivy image raigaurav95/javaapp:latest > scan.txt
            cat scan.txt
            """
         }
