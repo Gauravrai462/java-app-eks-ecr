@@ -110,7 +110,7 @@ stage('Docker clean'){
 
      steps{
         script{
-            dockerImageCleanup("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+            dockerClean("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
         }
       } 
     } 
