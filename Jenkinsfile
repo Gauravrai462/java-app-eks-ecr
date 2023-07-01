@@ -94,9 +94,10 @@ pipeline {
          sh """   
            trivy image ${hubUser}/${project}:latest > scan.txt
            cat scan.txt
+           """
         }
       } 
-    }   
+   }   
 
 
   stage('Docker Push'){
@@ -108,6 +109,6 @@ pipeline {
       } 
     } 
     
-    
+ 
   }
 }
