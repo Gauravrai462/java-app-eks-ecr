@@ -113,7 +113,10 @@ pipeline {
 
      steps{
         script{
-            dockerClean("${params.ImageName}", "${params.ImageTag}", "${params.DockerHubUser}")
+            sh """
+              docker rmi ${hubUser}/${project}:${ImageTag}
+              docker rmi ${hubUser}/${project} ${hubUser}/${project}:latest
+             """
         }
       } 
     }   
